@@ -114,7 +114,7 @@ const Home = () => {
 					<section className="list_body px-4 md:px-[100px] space-y-5 mt-8 pb-11">
 						<div className="section_header middle justify-between font-semibold">
 							<h1 className="title text-lg md:text-2xl text-gray-600 capitalize md:middle stack">
-								<h1>present students for course:</h1>
+								<h1>Course code:</h1>
 								<h1 className="text-xs"> ECE 504</h1>
 							</h1>
 
@@ -135,6 +135,13 @@ const Home = () => {
 								<h1 className="text-right">{studentData.length}</h1>
 							</h1>
 						</div>
+
+						<button
+							onClick={() => localStorage.removeItem('deadline')}
+							className="submit_btn shadow-md hover:shadow-none capitalize p-2 px-4 bg-blue-700 rounded-lg text-white"
+						>
+							cancle deadline
+						</button>
 
 						<main className="student_list border shadow-sm overflow-x-scroll md:overflow-x-hidden overflow-y-scroll h-[250px]">
 							<table className=" w-[800px] md:w-full relative">
@@ -170,9 +177,7 @@ const Home = () => {
 						<div className="action_center border bg-blue-50 rounded-md shadow   w-full p-8">
 							<form onSubmit={(e) => submitHandler(e)} className=" w-full stack">
 								<div className="md:hidden middle time  space-x-2">
-									<h1 className="deadline capitalize text-sm">
-										accepting report till :
-									</h1>
+									<h1 className="deadline capitalize ">accepting report till :</h1>
 
 									<h1 className="italic text-xl font-bold">
 										{deadlineHour} : {deadlineMinues}
