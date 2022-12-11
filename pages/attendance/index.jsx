@@ -88,9 +88,9 @@ const Home = () => {
 
 			setStudentData([...studentData, newStudenInfo]);
 		} else {
+			localStorage.removeItem('deadlineTime');
 			window.alert('not accepting submission');
 			setActveForm(false);
-			localStorage.clear();
 		}
 	}
 
@@ -102,7 +102,7 @@ const Home = () => {
 						<div className="logo">
 							<h1 className="logo-text text-xl"> REPORT SUBMISSON PORTAL</h1>
 						</div>
-						<div className="time middle space-x-2">
+						<div className="hidden md:flex md:middle time  space-x-2">
 							<h1 className="deadline capitalize text-sm">accepting report till :</h1>
 
 							<h1 className="italic text-xl font-bold">
@@ -169,6 +169,20 @@ const Home = () => {
 
 						<div className="action_center border bg-blue-50 rounded-md shadow   w-full p-8">
 							<form onSubmit={(e) => submitHandler(e)} className=" w-full stack">
+								<div className="md:hidden middle time  space-x-2">
+									<h1 className="deadline capitalize text-sm">
+										accepting report till :
+									</h1>
+
+									<h1 className="italic text-xl font-bold">
+										{deadlineHour} : {deadlineMinues}
+									</h1>
+								</div>
+
+								<h1 className="time capitalize">
+									current time: {cHour}:{cMinutes}
+								</h1>
+
 								<div className="inputs stack  md:space-x-4  md:middle">
 									<div className="input_field_component">
 										<label htmlFor="name">upload Report:</label>
