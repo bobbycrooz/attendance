@@ -217,7 +217,7 @@ const Home = () => {
 					</section>
 				</div>
 			) : (
-				<div className="group h-screen w-screen centered">
+				<div className="group h-screen w-screen centered p-4">
 					<div className="card bg-blue-50 shadow-xl w-auto border p-4 h-auto rounded-lg stack">
 						<h1 className="title text-lg md:text-2xl font-semibold m-2 text-gray-600 capitalize md:middle stack">
 							set deadline for report submisson
