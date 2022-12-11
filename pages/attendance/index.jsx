@@ -137,7 +137,7 @@ const Home = () => {
 						</div>
 
 						<button
-							onClick={() => localStorage.removeItem('deadline')}
+							onClick={() => localStorage.removeItem('deadlineTime')}
 							className="submit_btn shadow-md hover:shadow-none capitalize p-2 px-4 bg-blue-700 rounded-lg text-white"
 						>
 							cancle deadline
