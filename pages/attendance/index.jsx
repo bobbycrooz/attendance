@@ -131,7 +131,7 @@ const Home = () => {
 							</div>
 
 							<h1 className="counts capitalize text-xs md:middle stack">
-								<h1>total present students: </h1>
+								<h1>total submited report: </h1>
 								<h1 className="text-right">{studentData.length}</h1>
 							</h1>
 						</div>
