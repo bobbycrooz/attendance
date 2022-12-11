@@ -27,6 +27,11 @@ const Home = () => {
 		}
 	}
 
+	function cancleSession() {
+		localStorage.removeItem('deadlineTime');
+		setActveForm(false);
+	}
+
 	let currentDate = new Date();
 	let cDay = currentDate.getDate();
 	let cMonth = currentDate.getMonth() + 1;
@@ -137,7 +142,7 @@ const Home = () => {
 						</div>
 
 						<button
-							onClick={() => localStorage.removeItem('deadlineTime')}
+							onClick={cancleSession}
 							className="submit_btn shadow-md hover:shadow-none capitalize p-2 px-4 bg-blue-700 rounded-lg text-white"
 						>
 							cancle deadline
