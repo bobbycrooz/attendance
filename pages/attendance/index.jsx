@@ -21,6 +21,11 @@ const Home = () => {
 		// }
 	]);
 
+	if (!activeForm) {
+		localStorage.clear();
+		localStorage.removeItem('deadlineTime');
+	}
+
 	function getActiveSessionTime() {
 		const dl = JSON.parse(localStorage.getItem('deadlineTime'));
 		if (dl) {
@@ -108,12 +113,9 @@ const Home = () => {
 				total: '79%'
 			};
 
-			let tab = document.getElementsByTagName(table);
-			tab.scrollTo({
-				top: 100,
-				left: 100,
-				behavior: 'smooth'
-			});
+			let tab = document.getElementsByTagName('table');
+			console.log(tab);
+			tab[0].scrollIntoView();
 
 			setStudentData([...studentData, newStudenInfo]);
 		} else {
