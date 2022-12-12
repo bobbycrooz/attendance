@@ -21,10 +21,11 @@ const Home = () => {
 		// }
 	]);
 
-	if (!activeForm) {
-		localStorage.clear();
-		localStorage.removeItem('deadlineTime');
-	}
+	// if (typeof window !== undefined && !activeForm) {
+	// 	console.log(typeof window);
+	// 	// typeof window !== undefined && localStorage.clear();
+	// 	// typeof window !== undefined && localStorage.removeItem('deadlineTime');
+	// }
 
 	function getActiveSessionTime() {
 		const dl = JSON.parse(localStorage.getItem('deadlineTime'));
@@ -35,15 +36,20 @@ const Home = () => {
 			setActveForm(false);
 		}
 
-		typeof window !== undefined &&
-			setString(
-				`${cYear}-${cMonth}-${cDay}T${deadlineHour.length == 1 ? `0${deadlineHour}` : deadlineHour}:${
-					deadlineMinues.length == 1 ? `0${deadlineMinues}` : deadlineMinues
-				}:00`
-			);
+		setString(
+			`${cYear}-${cMonth}-${cDay}T${deadlineHour?.length == 1 ? `0${deadlineHour}` : deadlineHour}:${
+				deadlineMinues?.length == 1 ? `0${deadlineMinues}` : deadlineMinues
+			}:00`
+		);
 
 		showCountDown(true);
 	}
+
+	useEffect(() => {
+		if (activeForm) {
+			getActiveSessionTime();
+		}
+	});
 
 	function cancleSession() {
 		localStorage.removeItem('deadlineTime');
@@ -91,12 +97,6 @@ const Home = () => {
 			setActveForm(false);
 		}
 	}, [deadlineHour, setDeadlineTime]);
-
-	useEffect(() => {
-		if (activeForm) {
-			getActiveSessionTime();
-		}
-	}, [activeForm]);
 
 	function submitHandler(e) {
 		e.preventDefault();
