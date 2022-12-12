@@ -35,11 +35,7 @@ const Pattern = () => {
 				alt=""
 				className="greeen absolute w-[50%] top-0 right-0"
 			/>
-			<img
-				src="https://dashboard.render.com/static/media/blob-yellow.ee90f0690b8874cca752a53b983ba4a2.svg"
-				alt=""
-				className="greeen absolute w-[50%] top-0 -right-16"
-			/>
+
 			<img
 				src="https://dashboard.render.com/static/media/blob-blue-top.2884289188dba8ff1e29a73a67506d9b.svg"
 				alt=""
