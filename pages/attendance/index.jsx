@@ -42,6 +42,8 @@ const Home = () => {
 
 	function cancleSession() {
 		localStorage.removeItem('deadlineTime');
+		setHour();
+		setMinues();
 		setActveForm(false);
 	}
 
@@ -105,6 +107,13 @@ const Home = () => {
 				time: time,
 				total: '79%'
 			};
+
+			let tab = document.getElementsByTagName(table);
+			tab.scrollTo({
+				top: 100,
+				left: 100,
+				behavior: 'smooth'
+			});
 
 			setStudentData([...studentData, newStudenInfo]);
 		} else {
