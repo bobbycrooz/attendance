@@ -44,10 +44,10 @@ const DeadLine = ({ setDeadlineTime, setHour, setMinues }) => {
 					<input
 						type="number"
 						name="matric"
-						placeholder="max: 30"
+						placeholder="max: 60"
 						id="min"
 						className="p-2"
-						max={30}
+						max={60}
 						onChange={(e) => setMinues(e.target.value)}
 					/>
 				</div>
